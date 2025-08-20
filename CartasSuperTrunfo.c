@@ -71,7 +71,7 @@ printf("PIB: %.2f\n",pib2);
 printf("Densidade populacional: %.2f\n",densidade2);
 printf("PIB per cápita: %.2f\n",pibper2);*/
 
-printf("População: carta %c venceu %lu\n", estado1, (populacao1 > populacao2));
+printf("População: carta %c venceu %u\n", estado1, (populacao1 > populacao2));
 printf("Área: carta %c venceu %u\n", estado1, (area1 > area2));
 printf("PIB: carta %c venceu %u\n", estado1, (pib1 > pib2));
 printf("Pontos turísticos: carta %c venceu %d\n", estado1, (pontos1 > pontos2));
@@ -83,4 +83,4 @@ return 0;
 }
 
 
-// CARTA A: 20, 10, 5, 8 CARTA B: 10, 20, 5,  RESULTADO: 1 0 1 0 0 0 1
+// 1 0 1 1
