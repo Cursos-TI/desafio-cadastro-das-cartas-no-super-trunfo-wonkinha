@@ -1,10 +1,8 @@
 #include <stdio.h>
 
-#include <stdio.h>
-
 int main(){
 
-char estado1[4], estado2[4];
+char estado1, estado2;
 char codigo1[5];
 char codigo2[5];
 char cidade1[20];
@@ -13,15 +11,15 @@ int pontos1, pontos2;
 float densidade1, pib1, pibper1, area1, densidade2, pib2, pibper2, area2, superpoder1, superpoder2;
 unsigned long int populacao1, populacao2;
 
-printf("Informe as letras que representam a sigla estado da cidade da PRIMEIRA CARTA: \n");
-scanf("%s",&estado1);
-/*printf("Informe o codigo da cidade com tres caracteres: \n");
-scanf(" %s", codigo1);*/
+printf("Informe a letra que representa o estado da PRIMEIRA CARTA: \n");
+scanf("%c",&estado1);
+printf("Informe o código do estado com tres caracteres: \n");
+scanf(" %s", codigo1);
 printf("Digite o nome da cidade: \n");
 scanf(" %s",cidade1);
 printf("Informe a população dessa cidade: \n");
 scanf(" %lu",&populacao1);
-/*printf("Informe a área dessa cidade em km²: \n");
+printf("Informe a área dessa cidade em km²: \n");
 scanf(" %f" ,&area1);
 printf("Informe o PIB dessa cidade: \n");
 scanf(" %f",&pib1);
@@ -32,7 +30,7 @@ scanf("%d", &pontos1);
 densidade1 = (float) (populacao1 / area1);
 pibper1 = (float) (pib1 / populacao1);
 
-printf("Estado: %s\n",estado1);
+/*printf("Estado: %c\n",estado1);
 printf("Código: %s\n",codigo1);
 printf("Cidade: %s\n",cidade1);
 printf("População: %d\n",populacao1);
@@ -43,15 +41,15 @@ printf("PIB per cápita: %.2f\n",pibper1);*/
 
 
 
-printf("Informe as letras que representam a sigla do o estado da cidade da SEGUNDA CARTA: \n");
-scanf(" %s",&estado2);
-/*printf("Informe o código do estado com tres caracteres: \n");
-scanf(" %s", codigo2);*/
+printf("Informe a letra que representa o estado da SEGUNDA CARTA: \n");
+scanf(" %c",&estado2);
+printf("Informe o código do estado com tres caracteres: \n");
+scanf(" %s", codigo2);
 printf("Digite o nome da cidade: \n");
 scanf(" %s",cidade2);
 printf("Informe a população dessa cidade: \n");
 scanf(" %lu",&populacao2);
-/*printf("Informe a área dessa cidade em km²: \n");
+printf("Informe a área dessa cidade em km²: \n");
 scanf(" %f" ,&area2);
 printf("Informe o PIB dessa cidade: \n");
 scanf(" %f",&pib2);
@@ -73,17 +71,14 @@ printf("PIB: %.2f\n",pib2);
 printf("Densidade populacional: %.2f\n",densidade2);
 printf("PIB per cápita: %.2f\n",pibper2);*/
 
-if (populacao1 > populacao2)
-{
-printf("Carta 1 - %s(%s): %u\n", cidade1, estado1, populacao1);
-printf("Carta 2 - %s(%s): %u\n", cidade2, estado2, populacao2);
-printf("Carta 1 (%s) venceu!", cidade1);
-
-} else{
-    printf("Carta 1 - %s(%s): %u\n", cidade1, estado1, populacao1);
-printf("Carta 2 - %s(%s): %u\n", cidade2, estado2, populacao2);
-printf("Carta 1 (%s) venceu!", cidade2);
-}
+printf("População: carta %c venceu %lu\n", estado1, (populacao1 > populacao2));
+printf("População: carta %c venceu %u\n", estado1, (populacao1 > populacao2));
+printf("Área: carta %c venceu %u\n", estado1, (area1 > area2));
+printf("PIB: carta %c venceu %u\n", estado1, (pib1 > pib2));
+printf("Pontos turísticos: carta %c venceu %d\n", estado1, (pontos1 > pontos2));
+printf("Densidade populacional: carta %c venceu %u\n", estado2, (densidade1 < densidade2));
+printf("PIB per cápita: carta %c venceu %u\n", estado1, (pibper1 > pibper2));
+printf("Super poder: carta %c venceu %u\n", estado1, (superpoder1 > superpoder2));
 
 return 0;
 }
